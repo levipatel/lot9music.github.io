@@ -24,6 +24,12 @@ ctrl.onclick = function () {
     // Prevent Default Action
     return false;
 };
+
+function EvalSound(soundobj) {
+  var thissound=document.getElementById(soundobj);
+  thissound.play();
+}
+
 </script>
 
 </head>
@@ -33,12 +39,8 @@ ctrl.onclick = function () {
   <div class="col-md-12 text-center"><img src="http://lot9music.github.io/images/Lot9Music_White.png" class="img-responsive center-block" alt="Responsive image"></div>
 </div>
 <div class="row">
-  <div class="col-md-12 text-center"><audio controls src="http://s2.stationplaylist.com:9480/listen.m3u"></audio></div>
-</div>
-<div class="row">
 	<br></br>
-  <div class="col-md-12 text-center"><audio controls src="http://s2.stationplaylist.com:9480/splot980.MP3"></audio></div>
-  <div class="col-md-12 text-center"><audio controls="" src="http://s2.stationplaylist.com:9480/listen"></audio></audio></div>
+  <div class="col-md-12 text-center"><audio controls src="http://s2.stationplaylist.com:9480/listen"></audio></audio></div>
 </div>
 <div class="row">
 	<div class="col-md-12 text-center">
@@ -47,10 +49,22 @@ ctrl.onclick = function () {
 		</audio>
 	</div>
 </div>
+<div class="row">
 	<div class="col-md-12 text-center">
 		<a href="#" id="audioControl">play!</a>
 	</div>
 </div>
+
+<div class="row">
+	<div class="col-md-12 text-center">
+
+Click the speaker to hear the sound.  <a href="javascript:null()" onClick="EvalSound('sound1'); return false;">
+<img src="sound_icon.png" alt="" title="sound_icon" width="" height="" class="" /></a>
+<audio id="sound1" style="display: none; width: 0px; height: 0px;" src="sound.mp3" controls preload="auto" autobuffer>
+
+	</div>
+</div>
+
 </body>
 </html>
 
