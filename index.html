@@ -17,7 +17,7 @@ function EvalSound(soundobj) {
   if (isPlaying) {
   	thissound.pause();
   	isPlaying = false;
-  	document.getElementById('playbutton').src = "images/playbutton.jpeg";
+  	document.getElementById('playbutton').src = "images/playbutton.png";
   } else {
   	thissound.play();
   	isPlaying = true;
@@ -38,7 +38,7 @@ function EvalSound(soundobj) {
 		<div id="playimage" class="col-md-12 text-center">
 
 			<a href="javascript:null()" onClick="EvalSound('sound1'); return false;">
-			<img id="playbutton" src="images/playbutton.jpeg" alt="" title="sound_icon" width="30%" style="max-width:200px; min-width:80px" height="" class="" /></a>
+			<img id="playbutton" src="images/playbutton.png" alt="" title="sound_icon" width="30%" style="max-width:200px; min-width:80px" height="" class="" /></a>
 			<audio id="sound1" style="display: none; width: 0px; height: 0px;" src="http://s2.stationplaylist.com:9480/listen" controls preload="auto" autobuffer>
 
 		</div>
