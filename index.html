@@ -24,10 +24,20 @@ ctrl.onclick = function () {
     // Prevent Default Action
     return false;
 };
+</script>
+
+<script>
+
+var isPlaying = false;
 
 function EvalSound(soundobj) {
   var thissound=document.getElementById(soundobj);
-  thissound.play();
+
+  if (isPlaying) {
+  	thissound.stop();
+  } else {
+  	thissound.play();
+  }
 }
 
 </script>
