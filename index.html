@@ -6,6 +6,26 @@
 <link href="http://lot9music.github.io/styles.css" rel="stylesheet">
 <script type="text/javascript" src="http://lot9music.github.io/scripts.js" defer></script>
 <title>Lot9 Music</title>
+
+<script type="text/javascript">
+	var yourAudio = document.getElementById('yourAudio'),
+    ctrl = document.getElementById('audioControl');
+
+ctrl.onclick = function () {
+
+    // Update the Button
+    var pause = ctrl.innerHTML === 'pause!';
+    ctrl.innerHTML = pause ? 'play!' : 'pause!';
+
+    // Update the Audio
+    var method = pause ? 'pause' : 'play';
+    yourAudio[method]();
+
+    // Prevent Default Action
+    return false;
+};
+</script>
+
 </head>
 <body>
 <div class="container">
@@ -16,8 +36,19 @@
   <div class="col-md-12 text-center"><audio controls src="http://s2.stationplaylist.com:9480/listen.m3u"></audio></div>
 </div>
 <div class="row">
+	<br></br>
   <div class="col-md-12 text-center"><audio controls src="http://s2.stationplaylist.com:9480/splot980.MP3"></audio></div>
 </div>
+<div class="row">
+	<div class="col-md-12 text-center">
+		<audio id="yourAudio" preload='none'>
+    		<source src="http://s2.stationplaylist.com:9480/splot980.MP3" type='audio/mpeg' />
+		</audio>
+	</div>
+</div>
+	<div class="col-md-12 text-center">
+		<a href="#" id="audioControl">play!</a>
+	</div>
 </div>
 </body>
 </html>
