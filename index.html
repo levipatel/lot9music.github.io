@@ -12,17 +12,19 @@
 var isPlaying = false;
 
 function EvalSound(soundobj) {
-  var thissound=document.getElementById(soundobj);
+  var thissound = document.getElementById(soundobj);
+  var playButtonSource = document.getElementById(playbutton).src;
 
   if (isPlaying) {
   	thissound.pause();
+  	playButtonSource = "/images/playbutton.jpeg";
   	isPlaying = false;
   } else {
   	thissound.play();
+  	playButtonSource = "/images/pausebutton.png";
   	isPlaying = true;
   }
 
-  window.alert(isPlaying);
 }
 
 </script>
@@ -32,18 +34,13 @@ function EvalSound(soundobj) {
 <div class="container">
 
 <div class="row">
-  <div class="col-md-12 text-center"><img src="http://lot9music.github.io/images/Lot9Music_White.png" class="img-responsive center-block" alt="Responsive image"></div>
-</div>
-
-<div class="row">
-	<br></br>
-  <div class="col-md-12 text-center"><audio controls src="http://s2.stationplaylist.com:9480/listen"></audio></audio></div>
+  <div class="col-md-12 text-center"><img src="images/Lot9Music_White.png" class="img-responsive center-block" alt="Responsive image"></div>
 </div>
 
 <div class="row">
 	<div class="col-md-12 text-center">
 		<a href="javascript:null()" onClick="EvalSound('playbutton'); return false;">
-		<img src="playbutton.png" alt="Play" title="sound_icon" width="" height="" class="" /></a>
+		<img src="images/playbutton.jpeg" alt="Play" title="sound_icon" width="" height="" class="" /></a>
 		<audio id="playbutton" style="display: none; width: 0px; height: 0px;" src="http://s2.stationplaylist.com:9480/listen" controls preload="auto" autobuffer>
 
 	</div>
