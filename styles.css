@@ -31,8 +31,8 @@ h2 {
 #icons {
     position: relative;
     float: right;
-    top: 0.5em;
-    right: 0.1em;
+    top: 1em;
+    right: 1em;
     display: block;
     width: 58%;
     max-width: 180px;
