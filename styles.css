@@ -13,10 +13,6 @@ h2 {
     color: white;
 }
 
-audio {
-    
-}
-
 #icons {
     position: relative;
     float: right;
@@ -31,4 +27,10 @@ audio {
 	height: 20%;
 	max-width: 36px;
 	max-height: 36px;
+}
+
+#footer {
+    bottom: 0;
+    position: fixed;
+    color: #FFFFFF;
 }
