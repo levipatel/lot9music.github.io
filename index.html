@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Official website of LOT9 Music. Listen to music streaming live from Matakana, New Zealand.">
+<meta name="keywords" content="Streaming, Radio, 88.1, 88.1 fm, Lot 9, Lot9, Lot9 fm, Ambient, Electronic, Electronica, Instrumental, Post-rock, Postrock, Modern Classical, House, MP3, Levi Patel, Sigur Ros, Olafur Arnalds, Nils Frahm, Matakana, Auckland, New Zealand" />
+<base target="_blank">
+
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 <link href="styles.css" type="text/css" rel="stylesheet">
 <!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
@@ -28,6 +34,20 @@ function EvalSound(soundobj) {
 
 </script>
 
+<script>
+
+$(function(){
+    var $style = $('<style />').appendTo('head'),
+        $window = $(window);
+
+    $window.resize(function(){
+        $style.html('img{max-width:' + $window.width() + 'px;max-height:' + $window.height() + 'px}');
+    })
+    .resize();
+});
+
+</script>
+
 </head>
 <body>
 
@@ -39,19 +59,20 @@ function EvalSound(soundobj) {
 	</header>
 
 <div class="container">
-	<div class="row">
-	  <div class="col-md-12 text-center"><img id="logo" src="images/Lot9Music_White.png" class="img-responsive center-block" alt="Responsive image"></div>
-	</div>
 
-	<div class="row">
-		<div id="playimage" class="col-md-12 text-center">
-
-			<a href="javascript:null()" onClick="EvalSound('sound1'); return false;">
-			<img id="playbutton" src="images/playbutton.png" alt="" title="sound_icon" width="30%" style="max-width:200px; min-width:80px" height="" class="" /></a>
-			<audio id="sound1" style="display: none; width: 0px; height: 0px;" src="http://s2.stationplaylist.com:9480/listen" controls preload="auto" autobuffer>
-
+		<div class="row">
+		  <div class="col-md-12 text-center"><img id="logo" src="images/Lot9Music_White.png" class="img-responsive center-block" alt="Responsive image"></div>
 		</div>
-	</div>
+
+		<div class="row">
+			<div id="playimage" class="col-md-12 text-center">
+
+				<a href="javascript:null()" onClick="EvalSound('sound1'); return false;">
+				<img id="playbutton" src="images/playbutton.png" alt="" title="sound_icon" width="30%" style="max-width:200px; min-width:80px" height="" class="" /></a>
+				<audio id="sound1" style="display: none; width: 0px; height: 0px;" src="http://s2.stationplaylist.com:9480/listen" controls preload="auto" autobuffer>
+
+			</div>
+		</div>
 
 </div>
 

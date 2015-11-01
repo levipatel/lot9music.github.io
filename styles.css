@@ -4,7 +4,7 @@ body {
     background-color: #201E1F;
     color: white;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   font-weight: 300;
+    font-weight: 300;
 }
 
 .container {
@@ -22,7 +22,7 @@ h2 {
 #logo {
     padding-top: 3em;
     max-width: 96%;
-    max-height: 50%;
+    max-height: 40%;
 }
 
 #playimage {
