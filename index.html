@@ -1,64 +1,71 @@
 <!DOCTYPE html>
 <html>
+	
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Official website of LOT9 Music. Listen to music streaming live from Matakana, New Zealand.">
-<meta name="keywords" content="Streaming, Radio, 88.1, 88.1 fm, Lot 9, Lot9, Lot9 fm, fm, Ambient, Electronic, Electronica, Instrumental, Post-rock, Postrock, Modern Classical, House, MP3, Levi Patel, Sigur Ros, Nils Frahm, Matakana, Auckland, New Zealand" />
-<base target="_blank">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Official website of LOT9 Music. Listen to music streaming live from Matakana, New Zealand.">
+	<meta name="keywords" content="Streaming, Radio, 88.1, 88.1 fm, Lot 9, Lot9, Lot9 fm, fm, Ambient, Electronic, Electronica, Instrumental, Post-rock, Postrock, Modern Classical, House, Techno, MP3, Levi Patel, Matakana, Auckland, New Zealand" />
+	<base target="_blank">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-<link href="styles.css" type="text/css" rel="stylesheet">
-<!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
-<script type="text/javascript" src="scripts.js" defer></script>
-<title>LOT9 Music | Streaming</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<link href="styles.css" type="text/css" rel="stylesheet">
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
+	<script type="text/javascript" src="scripts.js" defer></script>
+	<title>LOT9 Music | Streaming</title>
 
 
 
-<script>
+	<script>
 
-var isPlaying = false;
+		var isPlaying = false;
 
-function EvalSound(soundobj) {
-  var thissound=document.getElementById(soundobj);
-  if (isPlaying) {
-  	thissound.pause();
-  	isPlaying = false;
-  	document.getElementById('playbutton').src = "images/playbutton.png";
-  } else {
-  	thissound.play();
-  	isPlaying = true;
-  	document.getElementById('playbutton').src = "images/pausebutton.png";
-  }
-}
+		function EvalSound(soundobj) {
+		var thissound=document.getElementById(soundobj);
+		if (isPlaying) {
+			thissound.pause();
+			isPlaying = false;
+			document.getElementById('playbutton').src = "images/playbutton.png";
+		} else {
+			thissound.play();
+			isPlaying = true;
+			document.getElementById('playbutton').src = "images/pausebutton.png";
+		}
+		}
 
-</script>
+	</script>
 
-<script>
+	<script>
 
-$(function(){
-    var $style = $('<style />').appendTo('head'),
-        $window = $(window);
+		$(function(){
+			var $style = $('<style />').appendTo('head'),
+				$window = $(window);
 
-    $window.resize(function(){
-        $style.html('img{max-width:' + $window.width() + 'px;max-height:' + $window.height() + 'px}');
-    })
-    .resize();
-});
+			$window.resize(function(){
+				$style.html('img{max-width:' + $window.width() + 'px;max-height:' + $window.height() + 'px}');
+			})
+			.resize();
+		});
 
-</script>
+	</script>
 
 </head>
+
 <body>
 
 	<header id="mainheader" class="fluid">
 	  <div id="icons">
-	    <a href="mailto:lot9fm@hotmail.com?Subject=Lot9%20Music" target="_top"><img class="icon" src="images/icons/mailicon.png" align="right" alt=""/></a>
-	    <a href="https://www.facebook.com/Lot9FM" target="_blank"><img class="icon" src="images/icons/facebookicon.png" align="right" alt=""/></a>
+	    <a href="mailto:ramannzl1@hotmail.com?Subject=Lot9%20Music" target="_top">
+			<img class="icon" src="images/icons/mailicon.png" align="right" alt=""/>
+		</a>
+
+	    <a href="https://www.facebook.com/Lot9FM" target="_blank">
+			<img class="icon" src="images/icons/facebookicon.png" align="right" alt=""/>
+		</a>
 	  </div>
 	</header>
 
-<div class="container">
+	<div class="container">
 
 		<div class="row">
 		  <div class="col-md-12 text-center"><img id="logo" src="images/Lot9Music_White.png" class="img-responsive center-block" alt="Responsive image"></div>
@@ -69,21 +76,18 @@ $(function(){
 
 				<a href="javascript:null()" onClick="EvalSound('sound1'); return false;">
 				<img id="playbutton" src="images/playbutton.png" alt="" title="sound_icon" width="30%" style="max-width:200px; min-width:80px" height="" class="" /></a>
-				<audio id="sound1" style="display: none; width: 0px; height: 0px;" src="http://103.125.221.15:8000/stream" controls preload="auto" autobuffer>
+
+				<!-- Main IP Address -->
+				<!-- <audio id="sound1" style="display: none; width: 0px; height: 0px;" src="http://103.125.221.15:8000/stream" controls preload="auto" autobuffer> -->
+				
+				<!-- Temp IP Address 2024 March 3rd, to revert back to main IP address -->
+				<audio id="sound1" style="display: none; width: 0px; height: 0px;" src="https://103.14.70.203:8000/stream" controls preload="auto" autobuffer>
 
 			</div>
 		</div>
 
-</div>
-
-<!--<div id="footer">
-  <div class="container text-center">
-    <p class="text-muted credit" style="color:#fff">info@lot9music.com</p>
-  </div>
-</div>
--->
-
-
+	</div>
 
 </body>
+
 </html>
