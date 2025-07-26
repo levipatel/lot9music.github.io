@@ -18,33 +18,52 @@
 
 	<script>
 
-		var isPlaying = false;
+		let isPlaying = false;
 
 		function EvalSound(soundobj) {
-		var thissound=document.getElementById(soundobj);
-		if (isPlaying) {
-			thissound.pause();
-			isPlaying = false;
-			document.getElementById('playbutton').src = "images/playbutton.png";
-		} else {
-			thissound.play();
-			isPlaying = true;
-			document.getElementById('playbutton').src = "images/pausebutton.png";
-		}
+			const thissound = document.getElementById(soundobj);
+			
+			// Add error handling for the audio element
+			thissound.onerror = function() {
+				console.log('Audio stream error:', thissound.error);
+				alert('Stream is currently unavailable. Please try again later.');
+				isPlaying = false;
+				document.getElementById('playbutton').src = "images/playbutton.png";
+			};
+			
+			if (isPlaying) {
+				thissound.pause();
+				isPlaying = false;
+				document.getElementById('playbutton').src = "images/playbutton.png";
+			} else {
+				const playPromise = thissound.play();
+				if (playPromise !== undefined) {
+					playPromise.then(function() {
+						isPlaying = true;
+						document.getElementById('playbutton').src = "images/pausebutton.png";
+					}).catch(function(error) {
+						console.log('Playback failed:', error);
+						alert('Unable to play stream. The stream may be unavailable or blocked by your browser.');
+						isPlaying = false;
+						document.getElementById('playbutton').src = "images/playbutton.png";
+					});
+				}
+			}
 		}
 
 	</script>
 
 	<script>
-
-		$(function(){
-			var $style = $('<style />').appendTo('head'),
-				$window = $(window);
-
-			$window.resize(function(){
-				$style.html('img{max-width:' + $window.width() + 'px;max-height:' + $window.height() + 'px}');
-			})
-			.resize();
+		document.addEventListener('DOMContentLoaded', function() {
+			var style = document.createElement('style');
+			document.head.appendChild(style);
+			
+			function updateImageSizes() {
+				style.textContent = 'img{max-width:' + window.innerWidth + 'px;max-height:' + window.innerHeight + 'px}';
+			}
+			
+			window.addEventListener('resize', updateImageSizes);
+			updateImageSizes();
 		});
 
 	</script>
