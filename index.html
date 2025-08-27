@@ -97,7 +97,13 @@
 				<img id="playbutton" src="images/playbutton.png" alt="" title="sound_icon" width="30%" style="max-width:200px; min-width:80px" height="" class="" /></a>
 
 				<!-- Streaming Source (radio station home IP address, check whatismyip and use port 8000) -->
-				<audio id="sound1" style="display: none; width: 0px; height: 0px;" src="https://103.125.220.100:8000/stream" controls preload="auto" autobuffer>
+				<!-- <audio id="sound1" style="display: none; width: 0px; height: 0px;" src="https://103.125.220.100:8000/stream" controls preload="auto" autobuffer> -->
+
+				<!-- LOT9 Music Stream - HTTPS with domain certificate -->
+				<audio id="sound1"
+					src="https://lot9music.com/stream"
+					preload="none">
+				</audio>
 
 				<!-- LOT9 Music Stream - HTTPS with domain certificate -->
 				<!-- <audio id="sound1" style="display: none; width: 0px; height: 0px;" src="https://lot9music.com:8443/stream" controls preload="auto" autobuffer> -->
